@@ -1,0 +1,3 @@
+Streamlit Link: https://lab4-eda-task1.streamlit.app/
+
+Github Link: https://github.com/IfBilal/AI-Lab_Tasks/tree/main/Lab4
