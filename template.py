@@ -97,8 +97,13 @@ if uploaded_file is not None:
         counts = df[selected_column].value_counts()
         percentages = (counts / counts.sum() * 100).round(2)
 
+        top_n = 20
+        plot_counts = counts.head(top_n)
+        if len(counts) > top_n:
+            st.caption(f"Showing top {top_n} of {len(counts)} unique values.")
+
         fig, ax = plt.subplots()
-        sns.barplot(x=counts.index.astype(str), y=counts.values, ax=ax)
+        sns.barplot(x=plot_counts.index.astype(str), y=plot_counts.values, ax=ax)
         ax.set_title(f"Frequency Counts of {selected_column}")
         ax.set_xlabel(selected_column)
         ax.set_ylabel("Count")
